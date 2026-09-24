@@ -255,7 +255,7 @@ function renderEditor(){
     box.appendChild(fieldRow(entry, 'header', 'text', 'e.g. JASON'));
     box.appendChild(fieldRow(entry, 'quote', 'text', 'e.g. "Make them remember!" - Mother'));
     box.appendChild(fieldRow(entry, 'image', 'text', 'rbxassetid://... (nil or rbxassetid://0 = no image)'));
-    box.appendChild(fieldRow(entry, 'text', 'area', 'Body text — <font color="rgb(200,150,20)">tag</font>, <b>bold</b>, {killerConfig.Field}'));
+    box.appendChild(fieldRow(entry, 'text', 'area', 'Body text. <font color="rgb(200,150,20)">tag</font>, <b>bold</b>, {killerConfig.Field}'));
     entriesEl.appendChild(box);
   });
 }
@@ -593,7 +593,7 @@ document.getElementById('loadImportBtn').addEventListener('click', () => {
   try{
     if(importMode === 'lua'){
       const {entries: parsed, cfgPrefix, cfgValues} = loadLuaModule(raw);
-      if(!parsed.length) throw new Error('No entries found — check the pasted table.');
+      if(!parsed.length) throw new Error('No entries found. check the pasted table.');
       entries = parsed; configStore = {}; varStore = {}; defaultsStore = {}; varDefaults = {}; lastKeyStr = '';
       if(cfgPrefix){
         configName = cfgPrefix; configNameManual = true;
